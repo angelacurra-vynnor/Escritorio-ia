@@ -1,15 +1,15 @@
 FROM node:20-slim
 
-RUN apt-get update && apt-get install -y git
-
 WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 
-RUN npm install -g git+https://github.com/outworked/antigravity.git
+RUN npm install
+
+COPY . .
 
 ENV PORT=3000
 
 EXPOSE 3000
 
-CMD ["antigravity", "start"]
+CMD ["npm", "start"]
