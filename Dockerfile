@@ -1,1 +1,1 @@
-FROM ghcr.io/outworked/outworked:latest
+FROM outworked/outworked:latest
