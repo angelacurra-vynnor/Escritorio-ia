@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  escritorio-ia:
+    image: ghcr.io/outworked/outworked:latest
+    container_name: escritorio_agentes
+    ports:
+      - "3000:3000"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - PORT=3000
+    volumes:
+      # Mapeia seus agentes para dentro do Antigravity
+      - ./agents:/app/agents
+      # Mapeia a pasta de projetos para eles acessarem o n8n/Gatz
+      - /etc/easypanel/projects:/app/projects
+    deploy:
+      resources:
+        limits:
+          memory: 1G # Limite para não travar o n8n e o Chatwoot
