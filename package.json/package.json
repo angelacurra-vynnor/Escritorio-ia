@@ -1,0 +1,13 @@
+{
+    "name": "escritorio-ia",
+    "version": "1.0.0",
+    "description": "Servidor para agentes de IA do Escritório IA",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.3",
+        "js-yaml": "^4.1.0"
+    }
+}
